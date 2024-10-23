@@ -4,7 +4,7 @@ import MainRouteComponent from "./Components/MainRouteComponent";
 const App = () => {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
-
+//use effect
 useEffect(() => {
   const fetchData = async () => {
     try {
