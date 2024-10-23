@@ -1,0 +1,22 @@
+
+[
+    {
+      "customerId": "1",
+      "name": "John Doe",
+      "transactions": [
+        { "date": "2023-07-15", "amount": 120 },
+        { "date": "2023-08-19", "amount": 75 },
+        { "date": "2023-09-04", "amount": 150 }
+      ]
+    },
+    {
+      "customerId": "2",
+      "name": "Jane Smith",
+      "transactions": [
+        { "date": "2023-07-11", "amount": 200 },
+        { "date": "2023-07-12", "amount": 200 },
+        { "date": "2023-08-05", "amount": 50 },
+        { "date": "2023-09-20", "amount": 100 }
+      ]
+    }
+  ]

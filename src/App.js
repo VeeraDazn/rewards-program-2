@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import MainRouteComponent from "./Components/MainRouteComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  const [customers, setCustomers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch("userData.json");
+      const data = await response.json();
+      setCustomers(data);
+    } catch (e) {
+      console.log(e, "error");
+    } finally {
+      setLoading(false); // Stop the loading state once data is fetched
+    }
+  };
+  fetchData();
+}, []);
+
+
+  return (<>
+    {loading ? <p>Loading...</p> : <MainRouteComponent customers={customers} />}
+    </>
   );
-}
+};
 
 export default App;
